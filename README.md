@@ -1,3 +1,3 @@
-# Reaali python - X klass
+# Reaali python - 10. klass
 
-Koht minu X klassi pythoni projektidele
+Koht minu 10. klassi pythoni projektidele
