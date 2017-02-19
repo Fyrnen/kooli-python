@@ -33,7 +33,7 @@ for c in c_values:
         insertionSortedNumbers = insertionsort(in_numbers)
         in_end_time = time.time()
         d_in_time = in_end_time - in_start_time
-        print("Insertionsort runtime:", d_in_time, "seconds")
+        print("Insertion sort runtime:", d_in_time, "seconds")
         in_counter += 1
 
         if d_in_time > 60:
@@ -44,7 +44,7 @@ for c in c_values:
         bubbleSortedNumbers = bubblesort(bs_numbers)
         bs_end_time = time.time()
         d_bs_time = bs_end_time - bs_start_time
-        print("Bubblesort runtime:", d_bs_time, "seconds")
+        print("Bubble sort runtime:", d_bs_time, "seconds")
         bs_counter += 1
 
         if d_bs_time > 60:
