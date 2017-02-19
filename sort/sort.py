@@ -89,7 +89,7 @@ for c in c_values:
 
     if d_in_time > 60:
         sys.exit()
-    '''
+    
     bs_start_time = time.time()
     bubbleSortedNumbers = bubblesort(bs_numbers)
     bs_end_time = time.time()
@@ -98,7 +98,7 @@ for c in c_values:
 
     if d_bs_time > 60:
         sys.exit()
-    '''
+        
     print("---")
 
     numbers = []
