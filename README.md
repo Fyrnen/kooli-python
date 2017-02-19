@@ -1,1 +1,1 @@
-# Python course projects @[Tallinn Science School](real.edu.ee)
+# Python course projects @[Tallinn Science School](https://www.real.edu.ee)
