@@ -1,3 +1,5 @@
+import random
+
 class matrixOps:
 	def __init__(self, matrix):
 		self.matrix = matrix
@@ -9,6 +11,36 @@ class matrixOps:
 			return True
 		else:
 			return False
+	
+	#generate a random matrix with inputted length
+	def generateRandom(self, length):
+		newMatrix = []
+		
+		for i in range(length):
+			row = []
+			
+			for j in range(length):
+				row.append(random.randint())
+			
+			newMatrix.append(row)
+		
+		self.matrix = newMatrix
+		print("Random matrix generated successfully! ")
+	
+	def maxRow(self):
+		length = len(self.matrix)
+		maxRow = 0
+		
+		for i in self.matrix:
+			rowSum = 0
+			
+			for j in i:
+				rowSum += i
+			
+			if maxRow < rowSum:
+				maxRow = rowSum
+			else:
+				pass
 	
 	#check if the sums of numbers in each row are equal
 	def checkRows(self):
