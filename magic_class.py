@@ -20,13 +20,14 @@ class matrixOps:
 			row = []
 			
 			for j in range(length):
-				row.append(random.randint())
+				row.append(random.randint(0,9))
 			
 			newMatrix.append(row)
 		
 		self.matrix = newMatrix
 		print("Random matrix generated successfully! ")
 	
+	#find the biggest sum of items in any given row
 	def maxRow(self):
 		length = len(self.matrix)
 		maxRow = 0
@@ -35,12 +36,72 @@ class matrixOps:
 			rowSum = 0
 			
 			for j in i:
-				rowSum += i
+				rowSum += j
 			
 			if maxRow < rowSum:
 				maxRow = rowSum
 			else:
 				pass
+		
+		return maxRow
+
+	#find the smallest sum of items in any given row
+	def minRow(self):
+		length = len(self.matrix)
+		minRow = 0
+		
+		for i in range(length):
+			rowSum = 0
+			
+			for j in self.matrix[i]:
+				rowSum += j
+			
+			if i == 0:
+				minRow = rowSum
+			elif i != 0 and rowSum < minRow:
+				minRow = rowSum
+			else:
+				pass
+		
+		return minRow
+
+	#find the biggest sum of items in any given column
+	def maxCol(self):
+		length = len(self.matrix)
+		maxCol = 0
+
+		for i in range(length):
+			colSum = 0
+			
+			for j in range(length):
+				colSum += self.matrix[j][i]
+
+			if colSum > maxCol:
+				maxCol = colSum
+			else:
+				pass
+
+		return maxCol
+	
+	#find the smallest sum of items in any given column
+	def minCol(self):
+		length = len(self.matrix)
+		minCol = 0
+
+		for i in range(length):
+			colSum = 0
+			
+			for j in range(length):
+				colSum += self.matrix[j][i]
+			
+			if i == 0:
+				minCol = colSum
+			elif colSum < minCol and i != 0:
+				minCol = colSum
+			else:
+				pass
+
+		return minCol
 	
 	#check if the sums of numbers in each row are equal
 	def checkRows(self):
@@ -95,9 +156,22 @@ def inputMatrix():
 		
 	return matrix
 
-M = inputMatrix()
-
+M = []
 Matrix = matrixOps(M)
+
+l = int(input("How big are the square's sides? "))
+Matrix.generateRandom(l)
+
+for i in Matrix.matrix:
+        print(i)
+
+print()
+print("Max row:", Matrix.maxRow())
+print("Min row:", Matrix.minRow())
+print("Max col:", Matrix.maxCol())
+print("Min col:", Matrix.minCol())
+print()
+
 Matrix.checkCols()
 Matrix.checkDiag()
 Matrix.checkRows()
