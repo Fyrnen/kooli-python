@@ -69,7 +69,7 @@ def checkBoard(matrix, posX, posY):
 M = []
 generateChessBoard(M)
 
-sis = open("lipp.sis", "r")
+sis = open("queen.sis", "r")
 reps = int(sis.readline())
 
 for i in range(reps):
@@ -80,3 +80,12 @@ for i in range(reps):
     checkBoard(M, posX, posY)
 
     printAsMatrix(M)
+
+counter = 0
+for i in M:
+    for j in i:
+        if j == 0:
+            counter += 1
+        else:
+            pass
+print("Squares without fire:", counter)
