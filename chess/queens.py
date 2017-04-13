@@ -60,6 +60,11 @@ def checkDiag2(matrix, posX, posY):
             matrix[y][x] = 1
             x+=1
             y-=1
+            
+def checkBoard(matrix, posX, posY):
+    checkRC(matrix, posX, posY)
+    checkDiag1(matrix, posX, posY)
+    checkDiag2(matrix, posX, posY)
 
 M = []
 generateChessBoard(M)
@@ -72,9 +77,6 @@ for i in range(reps):
     print(chesspos)
     posX = ord(chesspos[0])-97
     posY = 8-int(chesspos[1])
-
-    checkRC(M, posX, posY)
-    checkDiag1(M, posX, posY)
-    checkDiag2(M, posX, posY)
+    checkBoard(M, posX, posY)
 
     printAsMatrix(M)
